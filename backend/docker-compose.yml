@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:15
-    container_name: fresha_postgres
+    container_name: barbershop_website
     environment:
       POSTGRES_USER: dev_alexandru
       POSTGRES_PASSWORD: 2005
