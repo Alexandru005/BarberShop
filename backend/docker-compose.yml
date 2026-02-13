@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:15
+    container_name: fresha_postgres
+    environment:
+      POSTGRES_USER: dev_alexandru
+      POSTGRES_PASSWORD: 2005
+      POSTGRES_DB: barbershop_website
+    ports:
+      - "5432:5432"

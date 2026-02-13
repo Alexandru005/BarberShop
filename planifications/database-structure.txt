@@ -1,0 +1,55 @@
+1. Barbershop (Salonul)
+id (PK)
+name
+address
+
+
+
+2. Barber (Frizerul)
+id (PK)
+first_name
+last_name
+email
+password
+id_barbershop (FK)
+
+
+
+3. Service
+id (PK)
+name
+description
+price (Double/BigDecimal)
+duration_minutes (Integer)
+id_barbershop (FK)
+
+
+
+4. Client (Userul normal)
+id (PK)
+first_name
+last_name
+email
+password
+phone_number (Util pentru confirmări SMS pe viitor).
+
+
+
+5. Reservation (Programarea)
+id (PK)
+start_date_time (Datetime/Timestamp)
+end_date_time (Datetime/Timestamp)
+status (Enum/String)
+id_client (FK)
+id_barber (FK)
+id_service (FK)
+
+
+
+6. Review (Opțional pentru MVP, dar structurat corect)
+id (PK)
+text
+rating (Int 1-5)
+id_client (FK)
+id_barber (FK)
+id_barbershop (FK)
