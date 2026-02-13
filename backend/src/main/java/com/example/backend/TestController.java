@@ -3,11 +3,14 @@ package com.example.backend;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController // (1) Spunem Spring-ului că această clasă gestionează cereri web
+@RestController
 public class TestController {
 
-    @GetMapping("/salut") // (2) Definim adresa la care răspunde metoda
-    public String spuneSalut() {
-        return "Hello world!"; // (3) Răspunsul
+    @GetMapping("/")
+    public String helloWorld(){
+        String rez = "Welcome to our website!<br>" +
+                "We hope that you will have a great experience visiting our application!\n";
+        return rez;
     }
+
 }
