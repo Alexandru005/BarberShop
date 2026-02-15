@@ -10,7 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/client")
+@RequestMapping("/api/clients")
+@CrossOrigin(origins = "http://localhost:5173") // <--- Adaugă linia asta! (Permite accesul React-ului)
 public class ClientController {
 
     @Autowired
@@ -23,6 +24,18 @@ public class ClientController {
         return ResponseEntity.ok(newClient);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<Client> login(@RequestBody Client loginRequest) {
+        // Caută clientul cu emailul și parola primite
+        Client client = service.loginClient(loginRequest.getEmail(), loginRequest.getPassword());
+
+        if (client != null) {
+            return ResponseEntity.ok(client); // 200 OK - Am găsit utilizatorul
+        } else {
+            return ResponseEntity.status(401).build(); // 401 Unauthorized - Date greșite
+        }
+    }
+
     //R
     @GetMapping
     public ResponseEntity<List<Client>> getAllClients(){
@@ -30,12 +43,14 @@ public class ClientController {
         return ResponseEntity.ok(clients);
     }
 
+
+
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Client>> getClient(@PathVariable Long id){
+    public ResponseEntity<Client> getClient(@PathVariable Long id){
         Optional<Client> client = service.getClientById(id);
 
         if(client.isPresent()){
-            return ResponseEntity.ok(client);
+            return ResponseEntity.ok(client.get());
         }
         return ResponseEntity.notFound().build();
     }

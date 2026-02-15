@@ -1,0 +1,199 @@
+.register-page img{
+    position: absolute;
+}
+
+.register-page #sticker1{
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    z-index: -1;
+    left: 10%;
+    top: 10%;
+    rotate: -40deg;
+    height: 300px;
+}
+
+.register-page #sticker2{
+    z-index: -1;
+    left: 70%;
+    top: 25%;
+    rotate: 35deg;
+    height: 400px;
+}
+
+.register-page #sticker3{
+    z-index: -1;
+    left: 38%;
+    top: 40%;
+    rotate: 10deg;
+}
+
+.register-page form{
+    width: 500px;
+    height: 600px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px whitesmoke;
+    background-color: rgba(69, 69, 69, 0.7);
+}
+
+.register-page .title{
+    text-align: center;
+    font-size: 2.5rem;
+    color: whitesmoke;
+    margin-bottom: 0;
+}
+
+.register-page hr{
+    border: 1px solid red;
+    width: 300px;
+    margin-bottom: 50px;
+}
+
+.register-page .form-group{
+    margin: 0 auto;
+}
+
+.register-page .subtitle{
+    margin: 0;
+    color: whitesmoke;
+    font-size: 1.4rem;
+}
+
+.register-page input{
+    padding: 2px 10px;
+    border: solid 1px black;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 350px;
+}
+
+.register-page button{
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 30px auto;
+    background-color: blue;
+    color: whitesmoke;
+}
+
+.register-page button:hover{
+    background-color: red;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+/*Mobile*/
+@media(max-width: 600px){
+    .register-page #sticker1{
+        left: 10%;
+        top: 5%;
+        height: 150px;
+    }
+
+    .register-page #sticker2{
+        left: 50%;
+        top: 25%;
+        height: 200px;
+    }
+
+    .register-page #sticker3{
+        left: 10%;
+        top: 55%;
+        height: 300px;
+    }
+
+    .register-page form{
+        width: 300px;
+        height: 500px;
+        margin: 100px auto;
+        gap: 15px;
+    }
+
+    .register-page .title{
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    .register-page hr{
+        width: 250px;
+        margin-bottom: 10px;
+    }
+
+    .register-page .subtitle{
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    .register-page input{
+        padding: 2px 10px;
+        font-size: 0.9rem;
+        width: 200px;
+    }
+
+    .register-page button{
+        padding: 5px 10px;
+        font-size: 1rem;
+        margin: 30px auto;
+    }
+}
+
+/*Tablet*/
+@media (min-width: 601px) and (max-width: 1023px) {
+    .register-page #sticker1{
+        left: 10%;
+        top: 5%;
+        height: 250px;
+    }
+
+    .register-page #sticker2{
+        left: 65%;
+        top: 25%;
+        height: 300px;
+    }
+
+    .register-page #sticker3{
+        left: 10%;
+        top: 50%;
+        height: 400px;
+    }
+
+    .register-page form{
+        height: 500px;
+        margin: 200px auto;
+    }
+
+    .register-page .title{
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    .register-page hr{
+        width: 250px;
+        margin-bottom: 10px;
+    }
+
+    .register-page .subtitle{
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    .register-page input{
+        padding: 2px 10px;
+        font-size: 0.9rem;
+        width: 200px;
+    }
+
+    .register-page button{
+        padding: 5px 10px;
+        font-size: 1rem;
+        margin: 30px auto;
+    }
+}
+

@@ -12,19 +12,19 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "first_name", nullable = false, length = 50)
     private String firstName;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
 
     @Column(nullable = false, length = 100, unique = true)
     private String email;
 
-    @Column(nullable = false, length = 15)
+    @Column(nullable = false, length = 255)
     private String password;
 
-    @Column(nullable = false, length = 15)
+    @Column(name = "phone_number", nullable = false, length = 15)
     private String phoneNumber;
 
     public Client(){}
@@ -87,14 +87,14 @@ public class Client {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Client client)) return false;
-        return Objects.equals(id, client.id) && Objects.equals(firstName, client.firstName) &&
-                Objects.equals(lastName, client.lastName) && Objects.equals(email, client.email) &&
-                Objects.equals(password, client.password) && Objects.equals(phoneNumber, client.phoneNumber);
+        if (this == o) return true;
+        if (!(o instanceof Client)) return false;
+        Client client = (Client) o;
+        return id != null && id.equals(client.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, email, password, phoneNumber);
+        return getClass().hashCode();
     }
 }

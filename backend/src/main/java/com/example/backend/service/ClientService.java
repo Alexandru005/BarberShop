@@ -4,7 +4,6 @@ import com.example.backend.model.Client;
 import com.example.backend.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,6 +26,11 @@ public class ClientService {
 
     public Optional<Client> getClientById(Long id){
         return repository.findById(id);
+    }
+
+    public Client loginClient(String email, String password) {
+        Optional<Client> client = repository.findByEmailAndPassword(email, password);
+        return client.orElse(null); // Returnează clientul dacă există, sau null dacă nu
     }
 
     //U
