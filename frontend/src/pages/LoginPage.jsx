@@ -26,9 +26,7 @@ function LoginPage() {
         if (role === 'client') {
             url = 'http://localhost:8080/api/clients/login';
         } else {
-            // url = 'http://localhost:8080/api/barbers/login'; // Va urma
-            alert("Logica pentru frizer nu e gata încă!");
-            return;
+            url = 'http://localhost:8080/api/barbers/login';
         }
 
         try {
