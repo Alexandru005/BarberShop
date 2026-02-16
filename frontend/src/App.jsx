@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
+import BarberShopPage from './pages/BarberShopPage';
 
 function App() {
     return (
@@ -16,6 +17,10 @@ function App() {
 
                 {/* 3. După ce dai Login cu succes, te duce la HOME */}
                 <Route path="/home" element={<HomePage />} />
+
+                {/* AICI E MAGIA: ":id" este o variabilă.
+                Orice pui după /barbershop/ va fi capturat ca "id".*/}
+                <Route path="/barbershop/:id" element={<BarberShopPage />} />
             </Routes>
         </BrowserRouter>
     );

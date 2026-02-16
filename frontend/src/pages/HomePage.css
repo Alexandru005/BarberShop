@@ -1,6 +1,86 @@
 .home-page{
-    width: 70%;
     margin: 100px auto;
     color: white;
+}
+
+.home-page .title{
+    font-size: 3rem;
     text-align: center;
+}
+
+.home-page .quote{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+.home-page .quote{
+    margin-bottom: 150px;
+}
+
+.home-page img{
+    border-radius: 5px;
+    height: 190px;
+    width: 190px;
+    margin: 0;
+    flex-shrink: 0; /* Previne comprimarea pătratului */
+}
+
+.home-page .list-barbershops{
+    padding: 0px 0;
+    height: 1000px;
+    margin: 0;
+    background-color: rgba(167, 167, 167, 0.42);
+    list-style: none;
+    overflow-y: auto;
+    scrollbar-width: none;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.home-page .list-barbershops .barbershop{
+    display: flex;
+    align-items: flex-start; /* Aliniază sus */
+    position: relative; /* Pentru poziționarea absolută a butonului */
+    margin: 10px auto;
+    padding: 20px;
+    height: 200px;
+    width: 95%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    color: black;
+}
+
+.home-page .data-info{
+    width: fit-content;
+    margin: 0 0 0 20px; /* Spațiu între pătrat și text */
+}
+
+.home-page .name{
+    margin: 0 0 8px 0; /* Mic spațiu între nume și adresă */
+    font-weight: bold;
+    font-size: 2.3rem;
+}
+
+.home-page .address{
+    margin: 0;
+    font-size: 1rem;
+}
+
+.home-page .barbershop button{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    background-color: blue;
+    color: whitesmoke;
+}
+
+.home-page .barbershop button:hover{
+    background-color: red;
 }
