@@ -29,7 +29,7 @@ function RegisterPage() {
             });
 
             if (response.ok) {
-                alert('✅ Cont creat cu succes! Verifică baza de date.');
+                alert('✅ Cont creat cu succes!');
                 setFormData({ firstName: '', lastName: '', email: '', password: '', phoneNumber: '' });
             } else {
                 alert('❌ Eroare: Email-ul există deja sau datele sunt invalide.');

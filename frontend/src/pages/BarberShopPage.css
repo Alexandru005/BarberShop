@@ -1,7 +1,84 @@
 .barbershop-page{
+    margin: 0;
     color: whitesmoke;
 }
 
-.barbershop-page h1{
+.barbershop-page .barbershop-page-patern{
+    width: 100%;
+    height: 150px;
+}
+
+.barbershop-page .title{
+    position: absolute;
+    top: 0;
+    color: black;
+    font-weight: bold;
+    font-size: 3rem;
+    font-style: italic;
+    text-shadow: 3px 3px 30px white;
+}
+
+.barbershop-page .title-service{
     text-align: center;
+    font-size: 3rem;
+}
+
+.barbershop-page .barbershop-page-services{
+    width: 1310px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.barbershop-page .barbershop-page-services .barbershop-page-service-card{
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: rgba(245, 245, 245, 0.15);
+    width: 250px;
+    height: 300px;
+}
+
+.barbershop-page .barbershop-page-services .barbershop-page-service-card:hover{
+    background-color: rgba(245, 245, 245, 0.25);
+}
+
+.barbershop-page .barbershop-page-services .service-name{
+    text-align: center;
+}
+
+.barbershop-page .barbershop-page-services .service-duration{
+    text-align: end;
+    margin-right: 20px;
+}
+
+.barbershop-page .barbershop-page-barbers ul {
+    list-style: none;
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.barbershop-page .barbershop-page-barbers li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: rgba(245, 245, 245, 0.15);
+    width: 250px;
+    height: 300px;
+}
+
+.barbershop-page .barbershop-page-barbers img{
+    width: 150px;
+    border-radius: 50%;
 }
