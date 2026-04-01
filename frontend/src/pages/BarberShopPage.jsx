@@ -1,6 +1,11 @@
 import './BarberShopPage.css';
 import patern from '../assets/background-vintage-barbershop-with-diagonal-colored-stripes-illustration-vector.jpg';
 import profile from '../assets/0921fc87aa989330b8d403014bf4f340.jpg';
+import star1 from '../assets/1-star.png';
+import star2 from '../assets/2-star.png';
+import star3 from '../assets/3-star.png';
+import star4 from '../assets/4-star.png';
+import star5 from '../assets/5-star.png';
 
 function BarberShopPage() {
 
@@ -47,55 +52,6 @@ function BarberShopPage() {
                         <li>Mai ceva</li>
                     </ul>
                 </div>
-
-                <div className={"barbershop-page-service-card"}>
-                    <h2 className={"service-name"}>Tuns - <span className={"service-price"}>70<sup><small>00</small></sup>Lei</span></h2>
-                    <p className={"service-duration"}>30 min.</p>
-                    <ul className={"service-description"}>
-                        <li>Spalat</li>
-                        <li>Tuns</li>
-                        <li>Frezat</li>
-                        <li>Parfumat</li>
-                        <li>Mai ceva</li>
-                    </ul>
-                </div>
-
-                <div className={"barbershop-page-service-card"}>
-                    <h2 className={"service-name"}>Tuns - <span className={"service-price"}>70<sup><small>00</small></sup>Lei</span></h2>
-                    <p className={"service-duration"}>30 min.</p>
-                    <ul className={"service-description"}>
-                        <li>Spalat</li>
-                        <li>Tuns</li>
-                        <li>Frezat</li>
-                        <li>Parfumat</li>
-                        <li>Mai ceva</li>
-                    </ul>
-                </div>
-
-                <div className={"barbershop-page-service-card"}>
-                    <h2 className={"service-name"}>Tuns - <span className={"service-price"}>70<sup><small>00</small></sup>Lei</span></h2>
-                    <p className={"service-duration"}>30 min.</p>
-                    <ul className={"service-description"}>
-                        <li>Spalat</li>
-                        <li>Tuns</li>
-                        <li>Frezat</li>
-                        <li>Parfumat</li>
-                        <li>Mai ceva</li>
-                    </ul>
-                </div>
-
-                <div className={"barbershop-page-service-card"}>
-                    <h2 className={"service-name"}>Tuns - <span className={"service-price"}>70<sup><small>00</small></sup>Lei</span></h2>
-                    <p className={"service-duration"}>30 min.</p>
-                    <ul className={"service-description"}>
-                        <li>Spalat</li>
-                        <li>Tuns</li>
-                        <li>Frezat</li>
-                        <li>Parfumat</li>
-                        <li>Mai ceva</li>
-                    </ul>
-                </div>
-
             </div>
 
             <h1 className={"title-service"}>Our Barbers</h1>
@@ -114,6 +70,68 @@ function BarberShopPage() {
                     </li>
                 </ul>
             </div>
+
+            <h1 className={"title-review"}>Reviews</h1>
+            <div className={"container-reviews"}>
+                <ul className={"review-list"}>
+                    <li className={"review-item"}>
+                        <div className={"user-review"}>
+                            <h3>Name user</h3>
+                            <img src={star1} alt="profile-pic"/>
+                        </div>
+                        <p>Review about this barbershop!</p>
+                    </li>
+
+                    <li className={"review-item"}>
+                        <div className={"user-review"}>
+                            <h3>Name user</h3>
+                            <img src={star2} alt="profile-pic"/>
+                        </div>
+                        <p>Review about this barbershop!</p>
+                    </li>
+
+                    <li className={"review-item"}>
+                        <div className={"user-review"}>
+                            <h3>Name user</h3>
+                            <img src={star3} alt="profile-pic"/>
+                        </div>
+                        <p>Review about this barbershop!</p>
+                    </li>
+
+                    <li className={"review-item"}>
+                        <div className={"user-review"}>
+                            <h3>Name user</h3>
+                            <img src={star4} alt="profile-pic"/>
+                        </div>
+                        <p>Review about this barbershop!</p>
+                    </li>
+
+                    <li className={"review-item"}>
+                        <div className={"user-review"}>
+                            <h3>Name user</h3>
+                            <img src={star5} alt="profile-pic"/>
+                        </div>
+                        <p>Review about this barbershop!</p>
+                    </li>
+
+                    <li className={"review-item"}>
+                        <div className={"user-review"}>
+                            <h3>Name user</h3>
+                            <img src={star5} alt="profile-pic"/>
+                        </div>
+                        <p>Review about this barbershop!</p>
+                    </li>
+
+                    <li className={"review-item"}>
+                        <div className={"user-review"}>
+                            <h3>Name user</h3>
+                            <img src={star5} alt="profile-pic"/>
+                        </div>
+                        <p>Review about this barbershop!</p>
+                    </li>
+                </ul>
+            </div>
+
 
         </div>
     );

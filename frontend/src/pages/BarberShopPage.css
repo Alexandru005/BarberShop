@@ -5,7 +5,7 @@
 
 .barbershop-page .barbershop-page-patern{
     width: 100%;
-    height: 150px;
+    height: 130px;
 }
 
 .barbershop-page .title{
@@ -18,13 +18,13 @@
     text-shadow: 3px 3px 30px white;
 }
 
-.barbershop-page .title-service{
+.barbershop-page .title-service, .title-review{
     text-align: center;
     font-size: 3rem;
 }
 
 .barbershop-page .barbershop-page-services{
-    width: 1310px;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@
 
 .barbershop-page .barbershop-page-services .barbershop-page-service-card{
     border-radius: 20px;
-    border: 1px solid white;
+    border: 3px solid white;
     background-color: rgba(245, 245, 245, 0.15);
     width: 250px;
     height: 300px;
@@ -43,6 +43,14 @@
 
 .barbershop-page .barbershop-page-services .barbershop-page-service-card:hover{
     background-color: rgba(245, 245, 245, 0.25);
+    border: 3px solid transparent;
+    background:
+        /* Culoarea interioară a cardului pe hover (TREBUIE să fie o culoare solidă, nu transparentă) */
+            linear-gradient(#222222, #222222) padding-box,
+
+                /* Gradientul pentru border */
+            linear-gradient(to right, blue, red) border-box;
+    cursor: pointer;
 }
 
 .barbershop-page .barbershop-page-services .service-name{
@@ -72,7 +80,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    border: 1px solid white;
+    border: 3px solid white;
     background-color: rgba(245, 245, 245, 0.15);
     width: 250px;
     height: 300px;
@@ -82,3 +90,96 @@
     width: 150px;
     border-radius: 50%;
 }
+
+.barbershop-page .barbershop-page-barbers h3{
+    font-size: 1.4rem;
+}
+
+.barbershop-page .barbershop-page-barbers button{
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: blue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+}
+
+.barbershop-page .barbershop-page-barbers button:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.barbershop-page .barbershop-page-barbers li:hover{
+    border: 3px solid transparent;
+    background:
+        /* Culoarea interioară a cardului pe hover (TREBUIE să fie o culoare solidă, nu transparentă) */
+            linear-gradient(#222222, #222222) padding-box,
+
+                /* Gradientul pentru border */
+            linear-gradient(to right, blue, red) border-box;
+    cursor: pointer;
+
+}
+
+.barbershop-page .container-reviews{
+    color: black;
+}
+
+.barbershop-page .container-reviews .review-list{
+    list-style: none;
+    padding: 0;
+    height: 500px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.barbershop-page .container-reviews .review-list .review-item{
+    border : 3px solid black;
+    border-radius: 10px;
+    padding: 20px 50px;
+    width: 60%;
+    margin: 10px auto;
+    background-color: white;
+}
+
+.barbershop-page .container-reviews .review-list .review-item:hover{
+    border: 3px solid transparent;
+
+    /* 2. Aplici metoda cu background-clip */
+    background:
+        /* Culoarea interioară a cardului pe hover (TREBUIE să fie o culoare solidă, nu transparentă) */
+            linear-gradient(#222222, #222222) padding-box,
+
+                /* Gradientul pentru border */
+            linear-gradient(to right, blue, red) border-box;
+
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.barbershop-page .container-reviews .review-list .review-item .user-review{
+    min-width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.barbershop-page .container-reviews .review-list .review-item .user-review h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.barbershop-page .container-reviews .review-list .review-item .user-review img{
+    width: 150px;
+    height: 25px;
+    margin-left: 20px;
+}
+
+.barbershop-page .container-reviews .review-list .review-item p{
+    margin: 0;
+    margin-top: 10px;
+}
+
