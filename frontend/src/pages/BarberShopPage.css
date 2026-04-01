@@ -183,3 +183,75 @@
     margin-top: 10px;
 }
 
+/* Butonul principal de adăugare */
+.add-review-btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: transparent;
+    color: whitesmoke;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-review-btn:hover {
+    background: linear-gradient(#222222, #222222) padding-box,
+    linear-gradient(to right, blue, red) border-box;
+    border: 2px solid transparent;
+}
+
+/* Cutia formularului */
+.review-form-box {
+    width: 60%;
+    margin: 0 auto 30px auto;
+    background-color: rgba(245, 245, 245, 0.15);
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.review-form-box textarea {
+    margin: 0 auto;
+    width: 95%;
+    height: 100px;
+    background-color: white;
+    color: black;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+}
+
+.form-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-controls select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-review-btn {
+    padding: 10px 25px;
+    background-color: blue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.submit-review-btn:hover {
+    background-color: red;
+}

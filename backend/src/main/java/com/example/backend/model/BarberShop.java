@@ -1,7 +1,9 @@
 package com.example.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -17,6 +19,18 @@ public class BarberShop{
 
     @Column(nullable = false, length = 100)
     private String address;
+
+    @OneToMany(mappedBy = "barberShop", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("barberShop")
+    private List<Barber> barbers;
+
+    @OneToMany(mappedBy = "barberShop", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("barberShop")
+    private List<Services> services; // <--- Aici ai grijă să imporți modelul tău Service!
+
+    @OneToMany(mappedBy = "barberShop", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("barberShop")
+    private List<Review> reviews;
 
     public BarberShop(){}
 
@@ -47,6 +61,30 @@ public class BarberShop{
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<Barber> getBarbers() {
+        return barbers;
+    }
+
+    public void setBarbers(List<Barber> barbers) {
+        this.barbers = barbers;
+    }
+
+    public List<Services> getServices() {
+        return services;
+    }
+
+    public void setServices(List<Services> services) {
+        this.services = services;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     @Override

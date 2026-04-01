@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import BarberShopPage from './pages/BarberShopPage';
+import RezervarePage from "./pages/RezervationPage";
 
 function App() {
     return (
@@ -14,6 +15,8 @@ function App() {
 
                 {/* 2. Dacă dai click pe "Creează cont", te duce la REGISTER */}
                 <Route path="/register" element={<RegisterPage />} />
+
+                <Route path="/rezervare" element={<RezervarePage />} />
 
                 {/* 3. După ce dai Login cu succes, te duce la HOME */}
                 <Route path="/home" element={<HomePage />} />
