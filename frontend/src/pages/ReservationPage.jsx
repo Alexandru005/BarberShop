@@ -1,6 +1,6 @@
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./RezervationPage.css";
+import "./ReservationPage.css";
 
 const PROGRAM_START = 9;  // 09:00
 const PROGRAM_END = 19;   // 19:00
@@ -37,7 +37,10 @@ function RezervarePage() {
     useEffect(() => {
         fetch(`http://localhost:8080/api/rezervari/barber/${barberId}`)
             .then(res => res.json())
-            .then(data => setRezervari(data || []))
+            .then(data => {
+                console.log("Rezervari primite:", data); // <- uită-te aici
+                setRezervari(data || [])
+            })
             .catch(() => setRezervari([]));
     }, [barberId]);
 
@@ -68,27 +71,34 @@ function RezervarePage() {
         if (!selectedDate || !selectedService) return [];
 
         const slots = [];
-        const duration = selectedService.durationMinutes || 30;
 
         for (let hour = PROGRAM_START; hour < PROGRAM_END; hour++) {
-            for (let min = 0; min < 60; min += duration) {
-                if (hour * 60 + min + duration > PROGRAM_END * 60) break;
+            for (let min = 0; min < 60; min += 30) {
+                if (hour * 60 + min >= PROGRAM_END * 60) break;
 
                 const slotStart = new Date(selectedDate);
                 slotStart.setHours(hour, min, 0, 0);
-                const slotEnd = new Date(slotStart.getTime() + duration * 60000);
+                const slotEnd = new Date(slotStart.getTime() + 30 * 60000);
 
-                // Verificăm dacă slotul se suprapune cu o rezervare existentă
                 const isOccupied = rezervari.some(r => {
-                    const rStart = new Date(r.startDateTime);
-                    const rEnd = new Date(r.endDateTime);
+                    // Adăugăm 'Z' dacă lipsește, ca să fie tratat ca UTC corect
+                    const rStartStr = r.startDateTime.endsWith('Z') ? r.startDateTime : r.startDateTime + 'Z';
+                    const rEndStr = r.endDateTime.endsWith('Z') ? r.endDateTime : r.endDateTime + 'Z';
+
+                    const rStart = new Date(rStartStr);
+                    const rEnd = new Date(rEndStr);
+
+                    // Comparăm doar pe aceeași zi
+                    const sameDay = rStart.toLocaleDateString() === slotStart.toLocaleDateString();
+                    if (!sameDay) return false;
+
                     return slotStart < rEnd && slotEnd > rStart;
                 });
 
                 slots.push({
                     label: `${String(hour).padStart(2, '0')}:${String(min).padStart(2, '0')}`,
                     start: slotStart,
-                    end: slotEnd,
+                    end: new Date(slotStart.getTime() + selectedService.durationMinutes * 60000),
                     occupied: isOccupied
                 });
             }
@@ -119,8 +129,24 @@ function RezervarePage() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(rezervareData)
         })
-            .then(res => { if (!res.ok) throw new Error(); return res.json(); })
-            .then(() => { alert("Rezervare confirmată! ✅"); navigate(`/barbershop/${shopId}`); })
+            .then(res => {
+                if (res.status === 409) {
+                    // Intervalul e deja ocupat — reîncărcăm rezervările
+                    alert("⚠️ Acest interval tocmai a fost rezervat de altcineva. Alege alt slot!");
+                    // Reîncărcăm rezervările ca să fie la zi
+                    return fetch(`http://localhost:8080/api/rezervari/barber/${barberId}`)
+                        .then(r => r.json())
+                        .then(data => {
+                            setRezervari(data || []);
+                            setSelectedSlot(null);
+                        });
+                }
+                if (!res.ok) throw new Error("Eroare la rezervare");
+                return res.json().then(() => {
+                    alert("✅ Rezervare confirmată!");
+                    navigate(`/barbershop/${shopId}`);
+                });
+            })
             .catch(() => alert("Eroare la rezervare."));
     };
 

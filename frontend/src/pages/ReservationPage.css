@@ -1,0 +1,252 @@
+.rezervare-page {
+    margin: 0;
+    color: whitesmoke;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.rezervare-page h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.rezervare-page h1 span {
+    text-shadow: 3px 3px 30px white;
+}
+
+/* --- STEPS --- */
+.step {
+    background-color: rgba(245, 245, 245, 0.15);
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.step h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.step:hover {
+    border: 3px solid transparent;
+    background:
+            linear-gradient(#222222, #222222) padding-box,
+            linear-gradient(to right, blue, red) border-box;
+}
+
+/* --- SERVICII --- */
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 18px;
+    border: 3px solid white;
+    border-radius: 20px;
+    background-color: rgba(245, 245, 245, 0.15);
+    cursor: pointer;
+    min-width: 150px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    border: 3px solid transparent;
+    background:
+            linear-gradient(#222222, #222222) padding-box,
+            linear-gradient(to right, blue, red) border-box;
+}
+
+.service-card.selected {
+    border: 3px solid transparent;
+    background:
+            linear-gradient(#222222, #222222) padding-box,
+            linear-gradient(to right, blue, red) border-box;
+}
+
+.service-card strong {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.service-card span {
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.service-card small {
+    color: rgba(245, 245, 245, 0.6);
+}
+
+/* --- CALENDAR --- */
+.calendar {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: whitesmoke;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: 0.2s;
+}
+
+.calendar-header button:hover {
+    color: blue;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    text-align: center;
+}
+
+.day-label {
+    font-size: 0.75rem;
+    color: rgba(245, 245, 245, 0.6);
+    padding: 4px 0;
+}
+
+.day {
+    padding: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.day:hover:not(.past) {
+    border: 2px solid transparent;
+    background:
+            linear-gradient(#222222, #222222) padding-box,
+            linear-gradient(to right, blue, red) border-box;
+}
+
+.day.selected {
+    background:
+            linear-gradient(#222222, #222222) padding-box,
+            linear-gradient(to right, blue, red) border-box;
+    border: 2px solid transparent;
+    font-weight: bold;
+    color: white;
+}
+
+.day.past {
+    color: rgba(245, 245, 245, 0.25);
+    cursor: not-allowed;
+}
+
+/* --- SLOTURI --- */
+.slots-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.slot {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background-color: rgba(245, 245, 245, 0.15);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.slot:hover:not(.occupied) {
+    border: 3px solid transparent;
+    background:
+            linear-gradient(#222222, #222222) padding-box,
+            linear-gradient(to right, blue, red) border-box;
+}
+
+.slot.selected {
+    border: 3px solid transparent;
+    background:
+            linear-gradient(#222222, #222222) padding-box,
+            linear-gradient(to right, blue, red) border-box;
+    font-weight: bold;
+}
+
+.slot.occupied {
+    border: 3px solid rgba(255, 80, 80, 0.5);
+    background-color: rgba(255, 80, 80, 0.1);
+    color: rgba(255, 100, 100, 0.8);
+    cursor: not-allowed;
+}
+
+/* --- CONFIRMARE --- */
+.confirm-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(245, 245, 245, 0.15);
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 16px 24px;
+    margin-bottom: 20px;
+}
+
+.confirm-bar button {
+    padding: 10px 25px;
+    background-color: blue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.confirm-bar button:hover {
+    background-color: red;
+}
+
+/* --- INAPOI --- */
+.back-btn {
+    background: none;
+    border: 2px solid white;
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.back-btn:hover {
+    border: 2px solid transparent;
+    background:
+            linear-gradient(#222222, #222222) padding-box,
+            linear-gradient(to right, blue, red) border-box;
+}

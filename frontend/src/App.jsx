@@ -4,7 +4,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import BarberShopPage from './pages/BarberShopPage';
-import RezervarePage from "./pages/RezervationPage";
+import RezervarePage from "./pages/ReservationPage.jsx";
 
 function App() {
     return (
