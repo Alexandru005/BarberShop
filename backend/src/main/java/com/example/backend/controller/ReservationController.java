@@ -16,16 +16,18 @@ public class ReservationController {
     @Autowired
     private ReservationService reservationService;
 
-    // GET - toate rezervările unui barber (pentru a afișa sloturile ocupate)
     @GetMapping("/barber/{barberId}")
     public ResponseEntity<List<Reservation>> getByBarber(@PathVariable Long barberId) {
         return ResponseEntity.ok(reservationService.getByBarberId(barberId));
     }
 
-    // POST - creează o rezervare nouă
     @PostMapping
     public ResponseEntity<Reservation> create(@RequestBody Reservation reservation) {
-        Reservation saved = reservationService.save(reservation);
-        return ResponseEntity.ok(saved);
+        return ResponseEntity.ok(reservationService.save(reservation));
+    }
+
+    @GetMapping("/barber/{barberId}/castiguri")
+    public ResponseEntity<Double> getCastiguriLuna(@PathVariable Long barberId) {
+        return ResponseEntity.ok(reservationService.getCastiguriLuna(barberId));
     }
 }

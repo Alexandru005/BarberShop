@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -34,5 +35,21 @@ public class ReservationService {
         }
 
         return reservationRepository.save(reservation);
+    }
+
+    public Double getCastiguriLuna(Long barberId) {
+        LocalDateTime startOfMonth = LocalDateTime.now()
+                .withDayOfMonth(1)
+                .withHour(0).withMinute(0).withSecond(0).withNano(0);
+        LocalDateTime now = LocalDateTime.now();
+
+        List<Reservation> rezervari = reservationRepository.findByBarberId(barberId);
+
+        return rezervari.stream()
+                .filter(r -> r.getStartDateTime().isAfter(startOfMonth)
+                        && r.getStartDateTime().isBefore(now))
+                .mapToDouble(r -> r.getService() != null
+                        ? r.getService().getPrice().doubleValue() : 0)
+                .sum();
     }
 }

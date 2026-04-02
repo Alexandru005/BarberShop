@@ -5,25 +5,18 @@ import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import BarberShopPage from './pages/BarberShopPage';
 import RezervarePage from "./pages/ReservationPage.jsx";
+import BarberHomePage from "./pages/BarberHomePage.jsx";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                {/* 1. Când deschizi site-ul (path="/"), te duce direct la LOGIN */}
                 <Route path="/" element={<LoginPage />} />
-
-                {/* 2. Dacă dai click pe "Creează cont", te duce la REGISTER */}
                 <Route path="/register" element={<RegisterPage />} />
-
                 <Route path="/rezervare" element={<RezervarePage />} />
-
-                {/* 3. După ce dai Login cu succes, te duce la HOME */}
                 <Route path="/home" element={<HomePage />} />
-
-                {/* AICI E MAGIA: ":id" este o variabilă.
-                Orice pui după /barbershop/ va fi capturat ca "id".*/}
                 <Route path="/barbershop/:id" element={<BarberShopPage />} />
+                <Route path="/barber/home" element={<BarberHomePage />} />
             </Routes>
         </BrowserRouter>
     );

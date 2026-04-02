@@ -39,16 +39,19 @@ function LoginPage() {
 
             // 3. Verificăm răspunsul
             if (response.ok) {
-                const user = await response.json(); // Primim datele utilizatorului din Java
+                const user = await response.json();
 
                 console.log("Login reușit!", user);
                 alert(`Bine ai venit, ${user.firstName}!`);
 
-                // Opțional: Salvăm userul în browser ca să știm că e logat
                 localStorage.setItem('user', JSON.stringify(user));
+                localStorage.setItem('role', role); // <- această linie există?
 
-                // Navigăm la pagina principală
-                navigate('/home');
+                if (role === 'client') {
+                    navigate('/home');
+                } else {
+                    navigate('/barber/home');
+                }
             } else {
                 // Răspuns 401 (Unauthorized)
                 alert('❌ Email sau parolă greșită!');
